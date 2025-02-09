@@ -21,13 +21,32 @@ using namespace std;
 // void doesnt retturn, it just does something or has to be called
 
 void hello(){
-    cout<<"hello!"<<endl;
+    cout<<"hello! ";
+}
+
+// parameterized function, takes an argument
+void printName(string a){
+    cout << a << " good evening!" << endl;
 }
 
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
-    hello();
 
+    cout << "whats your name?" << endl;
+    string name;
+    cin >> name;
+
+    // void function call
+    hello();
+    printName(name);
+
+    // reusing of the function
+    cout << "friend's name?" << endl;
+    string name2;
+    cin >> name2;
+
+    hello();
+    printName(name2);
     return 0;
 }
