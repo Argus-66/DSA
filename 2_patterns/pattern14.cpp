@@ -15,28 +15,24 @@ using namespace std;
 #define map                      map<ll,ll>
 #define mod                      1000000007
 
-// pattern
-//   *    
-//  ***
-// *****
+// pattern 
+// A 
+// A B 
+// A B C 
+// A B C D 
+// A B C D E 
 
 void pattern(int n){
-    for(int i = 1; i<=n; i++){
-        for(int j = 1; j<=n-i; j++){
-            cout << " ";
-        }
-        for(int j = 1; j<=2*i-1; j++){
-            cout << "*";
-        }
-        for(int j = 1; j<=n-i; j++){
-            cout << " ";
+    for(int i = 1; i <= n; i++){
+        for(char ch = 'A'; ch <= 'A' + i - 1; ch++){
+            cout << ch << " ";
         }
         cout << endl;
     }
 }
 
 int main() {
-    int n; cin >> n;
+    int n; cin>>n;
     pattern(n);
 
     return 0;

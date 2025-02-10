@@ -16,27 +16,30 @@ using namespace std;
 #define mod                      1000000007
 
 // pattern
-//   *    
-//  ***
-// *****
+// 1
+// 0 1
+// 1 0 1
+// 0 1 0 1
+// 1 0 1 0 1
 
 void pattern(int n){
-    for(int i = 1; i<=n; i++){
-        for(int j = 1; j<=n-i; j++){
-            cout << " ";
-        }
-        for(int j = 1; j<=2*i-1; j++){
-            cout << "*";
-        }
-        for(int j = 1; j<=n-i; j++){
-            cout << " ";
+    int start = 1;
+    for(int i = 1; i <= n; i++){
+
+        if(i % 2 == 0) start = 0;
+        else start = 1;
+
+        for(int j = 1; j <= i; j++){
+            cout << start << " ";
+            start = 1 - start;
         }
         cout << endl;
     }
 }
 
 int main() {
-    int n; cin >> n;
+    int n;
+    cin >> n;
     pattern(n);
 
     return 0;

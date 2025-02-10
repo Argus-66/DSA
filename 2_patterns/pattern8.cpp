@@ -16,9 +16,9 @@ using namespace std;
 #define mod                      1000000007
 
 // patten
-// * * * * *
-//   * * *
-//     *
+// *****
+//  ***
+//   *
 
 void pattern (int n){
     for(int i=1; i<=n; i++){
