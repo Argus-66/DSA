@@ -152,7 +152,10 @@ void vectorIterator(){
     }
     cout<< endl;
 
-    cout << v.empty() << endl;  // This will empty the vector and return 0 if it is empty and 1 otherwise.
+    v5.clear(); // remove all elements from the vector
+    cout << v5.empty() << endl;  // This will print: 1 (which is true, as the vector is empty now) or 0 (which is false, as the vector is not empty now)
+
+    
 }
 
 int main(){
