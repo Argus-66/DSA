@@ -26,6 +26,11 @@ using namespace std;
 //  SIZE : Returns the number of elements in the priority queue
 //  SWAP : Swaps the contents of two priority queues
 
+// Push log n
+// Pop log n
+// top O(1)
+
+
 
 void explainPriorityQueue(){
     priority_queue<int> pq;
@@ -45,6 +50,19 @@ void explainPriorityQueue(){
         pq.pop();
     }
     cout << endl;
+
+    //  other operations are similar to stack
+
+    // Minimum Priority Queue (priority_queue<int, vector<int>, greater<int>> pq)
+    priority_queue<int, vector<int>, greater<int>> minPq;
+    minPq.push(1);
+    minPq.push(2);
+    minPq.push(8);
+    minPq.push(4);
+    minPq.push(5);
+    cout << minPq.top() << endl; // 1
+    minPq.pop();
+    cout << minPq.top() << endl; // 2
 
     //  other operations are similar to stack
 }
