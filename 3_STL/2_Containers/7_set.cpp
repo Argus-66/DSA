@@ -15,6 +15,7 @@ using namespace std;
 #define mod                      1000000007
 
 //  Set 
+// UNIQUE AND SORTED
 //  Set is an unordered collection of unique elements.
 //  SET supports the following operations:
 //  - Insertion: O(log n)
@@ -33,7 +34,6 @@ using namespace std;
 //  - Count: O(log n)
 //  - Swap: O(1)
 //  - Merge: O(n log n)
-//  - Reverse: O(n)
 
 //
 
@@ -50,6 +50,26 @@ void explainSet(){
         cout << i << " ";  // Output: 1 2 3 4
     }
     cout << endl;
+
+    auto it = st.find(3);
+    if (it == st.end()) {
+        cout << "Element not found" << endl;
+    } else {
+        cout << "Found " << *it << endl;
+    }
+
+    st.erase(3);
+    cout << "After erasing 3: ";
+    for (int i : st) {
+        cout << i << " ";  // Output: 1 2 4
+    }
+    cout << endl;
+
+    int cnt = st.count(2);  // Returns the number of occurrences of the element, 1 if it exists, otherwise 0
+    cout << "Number of occurrences of 2: " << cnt << endl;
+
+    // most takes log n complexity
+    
 }
 
 int main() {
