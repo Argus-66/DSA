@@ -15,25 +15,35 @@ using namespace std;
 #define map                      map<ll,ll>
 #define mod                      1000000007
 
-//  Recursion
-//  when a function calls itself
-//  Until a specific condition is met
-//  
+void factorial(int n){
+    int fact = 1;
+    int i=1;
 
-void print (int n){
-    if(n<1){
-        return;
-    }
-    else{
-        print(n-1);
-        cout<<n<<endl;
+    while(fact<=n){
+        cout << fact << " ";
+        i++;
+        fact *= i;
     }
 }
 
-
+class Solution {
+    public:
+        vector<long long> factorialNumbers(long long n) {
+            vector<long long> factorials;
+            long long fact = 1, i = 1;
+          
+            while (fact <= n) {
+                factorials.push_back(fact);
+                i++;
+                if (fact > n / i) break; 
+                fact *= i;
+            }
+            return factorials;
+        }
+};
 
 int main() {
-    int n;cin >> n;
-    print(n);
+
+
     return 0;
 }

@@ -15,25 +15,23 @@ using namespace std;
 #define map                      map<ll,ll>
 #define mod                      1000000007
 
-//  Recursion
-//  when a function calls itself
-//  Until a specific condition is met
-//  
-
-void print (int n){
-    if(n<1){
+void print(int i){
+    if(i<1){
         return;
     }
     else{
-        print(n-1);
-        cout<<n<<endl;
+        cout<<"GFG ";
+        print(i-1);
+
     }
+    
 }
 
 
 
 int main() {
-    int n;cin >> n;
+    int n; cin>>n;
     print(n);
+
     return 0;
 }

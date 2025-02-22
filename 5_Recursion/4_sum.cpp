@@ -15,25 +15,29 @@ using namespace std;
 #define map                      map<ll,ll>
 #define mod                      1000000007
 
-//  Recursion
-//  when a function calls itself
-//  Until a specific condition is met
-//  
-
-void print (int n){
+int sum = 0;
+void print(int n){
+    
     if(n<1){
+        cout<<sum<<endl;
         return;
     }
     else{
+        sum += (n*n*n);
         print(n-1);
-        cout<<n<<endl;
     }
 }
 
+int sumOfSeries(int n) {
+    if (n < 1) {
+        return 0;
+    }
+    return (n * n * n) + sumOfSeries(n - 1);
+}
 
 
 int main() {
-    int n;cin >> n;
+    int n; cin>>n;
     print(n);
     return 0;
 }
