@@ -23,7 +23,7 @@ void insertAtBottom(stack<int> &stack, int val) {
 
     int top = stack.top();
     stack.pop();
-    insertAtBottom(stack, val);  // Recursive call to reach the bottom
+    insertAtBottom(stack, val); 
     stack.push(top);  // Push the popped elements back
 }
 
