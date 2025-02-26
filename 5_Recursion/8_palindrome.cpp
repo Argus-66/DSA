@@ -4,7 +4,6 @@ using namespace std;
 #define ll                       long long int
 #define test                     ll t; cin>>t; while(t--)
 #define ld                       long double
-#define tolower(s1)              transform(s1.begin(), s1.end(), s1.begin(), ::tolower)
 #define toupper(s1)              transform(s1.begin(), s1.end(), s1.begin(), ::toupper)
 #define PI                       3.1415926535897932384626433832795l
 #define fori(n) for (int i = 0; i < n; i++)     //fori(n) {}
@@ -27,7 +26,26 @@ void palindrome(string a){
         cout << "Yes" << endl;
     else
         cout << "No" << endl;
-}   
+}
+
+
+
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        int n = 0, i = s.length() - 1;
+        while (n < i) {
+            while (n < i && !isalnum(s[n])) n++;
+            while (n < i && !isalnum(s[i])) i--;
+    
+            if (tolower(s[n]) != tolower(s[i])) return false;
+    
+                n++;
+                i--;
+            }
+        return true;
+    }
+};
 
 
 
