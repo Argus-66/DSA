@@ -38,3 +38,67 @@ int main() {
 
 
 }
+
+
+
+
+// for long numbers
+
+unordered_map<int, ll> dp;
+
+int fibonacciNumber(int n){
+    if (n <= 1) return n;  // Base case
+
+    // If already computed, return stored value
+    if (dp.find(n) != dp.end()) return dp[n];
+
+    // Recursive call with memoization
+    return dp[n] = (fibonacciNumber(n - 1) + fibonacciNumber(n - 2)) % mod;
+}
+
+
+
+
+
+
+
+
+
+// Best way is Matrix Exponentiation... Havent learnt this yet................................................................
+
+void multiply(ll F[2][2], ll M[2][2]) {
+    ll x = (F[0][0] * M[0][0] % mod + F[0][1] * M[1][0] % mod) % mod;
+    ll y = (F[0][0] * M[0][1] % mod + F[0][1] * M[1][1] % mod) % mod;
+    ll z = (F[1][0] * M[0][0] % mod + F[1][1] * M[1][0] % mod) % mod;
+    ll w = (F[1][0] * M[0][1] % mod + F[1][1] * M[1][1] % mod) % mod;
+
+    F[0][0] = x;
+    F[0][1] = y;
+    F[1][0] = z;
+    F[1][1] = w;
+}
+
+// Matrix Exponentiation
+void power(ll F[2][2], ll n) {
+    if (n == 0 || n == 1)
+        return;
+
+    ll M[2][2] = {{1, 1}, {1, 0}};
+
+    power(F, n / 2);
+    multiply(F, F);
+
+    if (n % 2)
+        multiply(F, M);
+}
+
+// Fibonacci using Matrix Exponentiation
+int fibonacciNumber(int n) {
+    if (n <= 1)
+        return n;
+
+    ll F[2][2] = {{1, 1}, {1, 0}};
+    power(F, n - 1);
+
+    return F[0][0];  // Fn is stored in F[0][0]
+}
