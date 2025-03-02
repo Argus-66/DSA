@@ -60,7 +60,9 @@ using namespace std;
 
 
 
-
+void selection_sort(int arr[], int n){
+    for(int i=0; i<=n-2;i++)
+}
 
 
 
@@ -69,7 +71,12 @@ using namespace std;
 
 
 int main() {
+    int n;
+    cin>>n;
+    int arr[n];
+    fori(n) cin>>arr[i];
+    selection_sort(arr, n);
 
-
+    fori(n) cout<<arr[i]<<" ";
     return 0;
 }
