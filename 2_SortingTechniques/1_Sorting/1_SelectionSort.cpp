@@ -15,13 +15,13 @@ using namespace std;
 #define map                      map<ll,ll>
 #define mod                      1000000007
 
-// Selection Sort
-// Time Complexity: O(n^2)
-// Space Complexity: O(1)
-// Inplace: Yes
-// Stable: No
-// Advantages: Simple, Inplace, Memory Efficient
-// Disadvantages: Quadratic Time Complexity, Not Stable
+//* Selection Sort
+//* Time Complexity: O(n^2)
+//* Space Complexity: O(1)
+//* Inplace: Yes
+//* Stable: No
+//* Advantages: Simple, Inplace, Memory Efficient
+//* Disadvantages: Quadratic Time Complexity, Not Stable
 
 /*
  As the name suggest we select minimums 
