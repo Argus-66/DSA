@@ -18,26 +18,23 @@ using namespace std;
 class Solution {
 public:
     string frequencySort(string s) {
-        unordered_map<char,int>hashing;
-
-        for(char c:s){
-            hashing[c]++;
+        unordered_map<char,int> mpp;
+        for(char c : s){
+            mpp[c]++;
         }
-
-        vector<pair<char, int>> freq(hashing.begin(), hashing.end());
-        sort(freq.begin(), freq.end(), [](auto &a, auto &b){
+        vector<pair<char,int>> freq(mpp.begin(),mpp.end());
+        sort(freq.begin(),freq.end(),[](auto &a ,auto &b){
             return a.second > b.second;
         });
-
-        string result = "";
-
-        for (auto &p : freq) {
-            result += string(p.second, p.first);
+        string ans = "";
+        for(auto &[ch,count] : freq){
+            ans += string(count,ch);
         }
-        return result;
+        
+        return ans;
+        
     }
 };
-
 
 
 int main() {

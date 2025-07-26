@@ -3,7 +3,6 @@ using namespace std;
 
 #define ll                       long long int
 #define test                     ll t; cin>>t; while(t--)
-#define ld                       long double
 #define tolower(s1)              transform(s1.begin(), s1.end(), s1.begin(), ::tolower)
 #define toupper(s1)              transform(s1.begin(), s1.end(), s1.begin(), ::toupper)
 #define PI                       3.1415926535897932384626433832795l
@@ -15,26 +14,19 @@ using namespace std;
 #define map                      map<ll,ll>
 #define mod                      1000000007
 
+
 class Solution {
 public:
-    string frequencySort(string s) {
-        unordered_map<char,int>hashing;
+    int reverse(int x) {
+        int rev  = 0;
+        while(x != 0){
+            int ld = x%10;
 
-        for(char c:s){
-            hashing[c]++;
+            if(rev > INT_MAX/10 || rev < INT_MIN/10) return 0;
+            rev = (rev *10)+ld;
+            x = x/10;
         }
-
-        vector<pair<char, int>> freq(hashing.begin(), hashing.end());
-        sort(freq.begin(), freq.end(), [](auto &a, auto &b){
-            return a.second > b.second;
-        });
-
-        string result = "";
-
-        for (auto &p : freq) {
-            result += string(p.second, p.first);
-        }
-        return result;
+        return rev;
     }
 };
 
