@@ -39,7 +39,7 @@ public:
                 minHeap.pop(); // remove the smalest one in top
             } // so only k numbers remain in the heap
         }
-        return minHeap.top(); // top is the kth largest element
+        return minHeap.top();
     }
 };
 
