@@ -14,6 +14,19 @@ using namespace std;
 #define map                      map<ll,ll>
 #define mod                      1000000007
 
+/*
+*  This code finds the Kth largest element in an array using a min-heap.
+
+*   So what we do is, we enter the numbers in a min-heap(heap generally is  greater on top, but min-heap is smaller on top)
+*   then when a numbe is entered we check if the size of the heap is greater than k, if it is then we pop the top element
+*   and finally we return the top element of the heap which is the Kth largest element
+
+?   Time Complexity: O(n log k) where n is the number of elements in the array and k is the size of the heap.
+?   Space Complexity: O(k) for the min-heap.
+?   This is efficient for large arrays and small k values.
+?   This code is efficient and works well for the problem statement.
+*/
+
 
 class Solution {
 public:
@@ -21,12 +34,12 @@ public:
         priority_queue<int, vector<int>, greater<int>> minHeap;
 
         for (int num : nums) {
-            minHeap.push(num);
-            if (minHeap.size() > k) {
-                minHeap.pop();
-            }
+            minHeap.push(num); // insert numbers
+            if (minHeap.size() > k) { // if insertedis moe thann k
+                minHeap.pop(); // remove the smalest one in top
+            } // so only k numbers remain in the heap
         }
-        return minHeap.top();
+        return minHeap.top(); // top is the kth largest element
     }
 };
 
