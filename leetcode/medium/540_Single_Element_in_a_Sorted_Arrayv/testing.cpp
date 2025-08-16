@@ -15,21 +15,21 @@ using namespace std;
 #define map                      map<ll,ll>
 #define mod                      1000000007
 
-
 class Solution {
 public:
-    int maximumGap(vector<int>& nums) {
-        int n=nums.size();
-        if(n<2) return 0;
+    int singleNonDuplicate(vector<int>& nums) {
+        int n = nums.size();
+        if (n == 1) return nums[0];
 
-        sort(nums.begin(), nums.end());
-        int maxGap = 0;
-        for (int i = 1; i < n; i++) {
-            maxGap = max(maxGap, nums[i] - nums[i - 1]);
+        for(int i=1; i<n;i++){
+            if(nums[i] != nums[i-1] && nums[i] != nums[i+1]) {
+                return nums[i];
+            }
         }
-        return maxGap;
     }
-}; auto inti = atexit([]{ ofstream("display_runtime.txt") << "0"; });
+};
+
+
 
 
 int main() {
