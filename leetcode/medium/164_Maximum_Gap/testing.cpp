@@ -15,7 +15,7 @@ using namespace std;
 #define map                      map<ll,ll>
 #define mod                      1000000007
 
-
+// checking if the code is for maximum gap problem
 class Solution {
 public:
     int maximumGap(vector<int>& nums) {
