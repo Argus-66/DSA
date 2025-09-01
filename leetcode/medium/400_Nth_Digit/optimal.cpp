@@ -15,7 +15,29 @@ using namespace std;
 #define map                      map<ll,ll>
 #define mod                      1000000007
 
+class Solution {
+public:
+    int findNthDigit(int n) {
+        long long digitLength = 1;
+        long long count =9;
+        long long start =1;
 
+        while(n>digitLength*count){
+
+            n-=digitLength*count;
+
+            digitLength++;
+            count*=10;
+            start*=10;
+        }
+
+        int num = start+(n-1)/digitLength;
+
+        string s = to_string(num);
+        int digit = s[(n-1)%digitLength];
+        return digit- '0';
+    }
+};
 
 
 
