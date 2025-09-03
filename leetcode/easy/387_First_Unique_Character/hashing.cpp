@@ -18,7 +18,7 @@ using namespace std;
 class Solution {
 public:
     int firstUniqChar(string s) {
-        unordered_map<int,int>freq;
+        unordered_map<char,int>freq;
 
         for (char c : s) {
             freq[c]++;
