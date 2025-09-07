@@ -25,7 +25,7 @@ class Solution {
 public:
     int singleNumber(vector<int>& nums) {
         int ans = 0;
-        for(int x : nums) ans ^= x;
+        for(int x : nums) ans ^= x;    //! XOR function, it will cancel out the same numbers and will give the single number
         return ans;
     }
 };
