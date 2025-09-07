@@ -15,6 +15,15 @@ using namespace std;
 #define map                      map<ll,ll>
 #define mod                      1000000007
 
+/*
+* What we are doing is that, we are calculating the sum of first n natural numbers using the formula n*(n+1)/2
+* Then we are calculating the sum of the elements in the array.
+* The difference between the two sums will give us the missing number.
+* This approach has a time complexity of O(n) and a space complexity of O(1
+
+*/
+
+
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
