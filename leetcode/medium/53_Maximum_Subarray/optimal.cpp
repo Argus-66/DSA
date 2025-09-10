@@ -15,6 +15,11 @@ using namespace std;
 #define map                      map<ll,ll>
 #define mod                      1000000007
 
+/*
+*   s<0 
+*   skips all the unnecessary negatives...
+*/
+
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
