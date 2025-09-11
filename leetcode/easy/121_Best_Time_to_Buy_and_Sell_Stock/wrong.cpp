@@ -15,6 +15,14 @@ using namespace std;
 #define map                      map<ll,ll>
 #define mod                      1000000007
 
+/*
+*   This approach doesnt work in cases like [2,4,1]
+*   because 2->4 is 2 profit
+*   but
+*   because of 1 in the last it sets minimum number possible to 1
+*   and there is nothing aftr so 0 profit...
+
+*/
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
