@@ -1,0 +1,66 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define ll                       long long int
+#define test                     ll t; cin>>t; while(t--)
+#define ld                       long double
+#define tolower(s1)              transform(s1.begin(), s1.end(), s1.begin(), ::tolower)
+#define toupper(s1)              transform(s1.begin(), s1.end(), s1.begin(), ::toupper)
+#define PI                       3.1415926535897932384626433832795l
+#define fori(n) for (int i = 0; i < n; i++)     //fori(n) {}
+#define forj(n) for (int j = 0; j < n; j++)
+#define fork(n) for (int k = 0; k < n; k++)
+#define pb                       push_back
+#define set                      set<ll>
+#define map                      map<ll,ll>
+#define mod                      1000000007
+
+class Solution{
+public:
+    void setZeroes(vector<vector<int>> &matrix){
+        int n = matrix.size();
+        int m = matrix[0].size();
+
+        int col0 = 1;
+
+
+        for (int i = 0; i < n; i++){
+            for (int j = 0; j < m; j++){
+                if (matrix[i][j] == 0){
+                    matrix[i][0] = 0;
+
+                    if (j != 0)
+                        matrix[0][j] = 0;
+                    else
+                        col0 = 0;
+                }
+            }
+        }
+
+        for (int i = 1; i < n; i++){
+            for (int j = 1; j < m; j++){
+                if (matrix[i][j] != 0){
+                    if (matrix[i][0] == 0 || matrix[0][j] == 0){
+                        matrix[i][j] = 0;
+                    }
+                }
+            }
+        }
+
+        if (matrix[0][0] == 0){
+            for (int j = 0; j < m; j++){
+                matrix[0][j] = 0;
+            }
+        }
+        if (col0 == 0){
+            for (int i = 0; i < n; i++){
+                matrix[i][0] = 0;
+            }
+        }
+    }
+};
+
+int main() {
+    
+    return 0;
+}
