@@ -20,39 +20,39 @@ using namespace std;
 *   Output: [[1,0,1],[0,0,0],[1,0,1]]
 *
 *   Approach:
-*       1. Use the first row and first column as markers to indicate which rows and columns should be zeroed.
-*       2. Traverse the matrix, and for every zero found, mark its row and column in the first row/column.
-*       3. Traverse the matrix again (excluding first row/column), and set elements to zero if their row or column is marked.
-*       4. Finally, update the first row and first column if needed.
+*   1. Use the first row and first column as markers to indicate which rows and columns should be zeroed.
+*   2. Traverse the matrix, and for every zero found, mark its row and column in the first row/column.
+*   3. Traverse the matrix again (excluding first row/column), and set elements to zero if their row or column is marked.
+*   4. Finally, update the first row and first column if needed.
 *
 *   Working Example:
-*       Initial matrix:
+*   Initial matrix:
 *           1 1 1
 *           1 0 1
 *           1 1 1
 *
-*       Step 1: Mark rows and columns
-*           - Find 0 at (1,1), mark matrix[1][0] = 0 and matrix[0][1] = 0
-*           - Markers after step 1:
-*               1 0 1
-*               0 0 1
-*               1 1 1
+*   Step 1: Mark rows and columns
+*   - Find 0 at (1,1), mark matrix[1][0] = 0 and matrix[0][1] = 0
+*   - Markers after step 1:
+*           1 0 1
+*           0 0 1
+*           1 1 1
 *
-*       Step 2: Set zeroes based on markers (excluding first row/col)
-*           - matrix[1][2] set to 0 (row 1 marked)
-*           - matrix[2][1] set to 0 (col 1 marked)
-*           - matrix[2][0] remains 1 (row 2 not marked)
-*           - matrix[2][2] remains 1 (row 2 and col 2 not marked)
+*   Step 2: Set zeroes based on markers (excluding first row/col)
+*   - matrix[1][2] set to 0 (row 1 marked)
+*   - matrix[2][1] set to 0 (col 1 marked)
+*   - matrix[2][0] remains 1 (row 2 not marked)
+*   - matrix[2][2] remains 1 (row 2 and col 2 not marked)
 *
-*           Matrix after step 2:
-*               1 0 1
-*               0 0 0
-*               1 0 1
+*   Matrix after step 2:
+*           1 0 1
+*           0 0 0
+*           1 0 1
 *
-*       Step 3: Update first row/col if needed
-*           - First row and first column do not need to be zeroed in this example.
+*   Step 3: Update first row/col if needed
+*   - First row and first column do not need to be zeroed in this example.
 *
-*       Final matrix:
+*   Final matrix:
 *           1 0 1
 *           0 0 0
 *           1 0 1
