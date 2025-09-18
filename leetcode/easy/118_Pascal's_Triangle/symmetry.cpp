@@ -15,48 +15,31 @@ using namespace std;
 #define map                      map<ll,ll>
 #define mod                      1000000007
 
-/*
-
-*   Output (Pascal's Triangle):
-*               1
-*              1 1
-*             1 2 1
-*            1 3 3 1
-*           1 4 6 4 1
-
-*   Explanation:
-*       Each row starts and ends with 1.
-*       Every inner number is the sum of the two numbers directly above it from the previous row.
-
-*   Input: numRows = 5
-*   Output: [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
-
-*/
-
 class Solution {
 public:
+    vector<int> generateRow(int rowIndex) {
+        long long ans = 1;
+        vector<int> ansRow(rowIndex + 1);  
+        ansRow[0] = 1;
 
-    vector<int>generateRow(int row){
-        long long ans=1;
-        vector<int>ansRow;
-        ansRow.push_back(1);
-
-        for(int col = 1; col < row; col++){
-            ans = ans * (row - col);
-            ans = ans / col;
-            ansRow.push_back(ans);
+        for (int col = 1; col <= rowIndex; col++) {
+            ans = ans * (rowIndex - col + 1) / col;
+            ansRow[col] = ans;
         }
+
         return ansRow;
     }
 
     vector<vector<int>> generate(int numRows) {
         vector<vector<int>> ans;
-        for (int row = 1; row <= numRows; row++) {
+        for (int row = 0; row < numRows; row++) {  
             ans.push_back(generateRow(row));
         }
         return ans;
     }
 };
+
+
 
 int main() {
     
