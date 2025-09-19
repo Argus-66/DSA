@@ -24,6 +24,9 @@ using namespace std;
 *       Find all unique triplets in the array which sum to zero.
 *       We use the 2-pointer method (can also call it 3-pointer since we fix one and move two pointers)
 *       after sorting the array to efficiently find valid triplets and skip duplicates.
+
+^   Time Complexity: O [(n log n)+(m*n)]
+^   Space COmplexity: O(unique elements)
 */
 
 
