@@ -15,18 +15,6 @@ using namespace std;
 #define map                      map<ll,ll>
 #define mod                      1000000007
 
-/*
-*   Input:  nums = [-1, 0, 1, 2, -1, -4]
-*   Output: [-1 -1 2]
-*           [-1 0 1]
-*
-*   Explanation:
-*       Find all unique triplets in the array which sum to zero.
-*       We use the 2-pointer method (can also call it 3-pointer since we fix one and move two pointers)
-*       after sorting the array to efficiently find valid triplets and skip duplicates.
-*/
-
-
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
