@@ -15,6 +15,17 @@ using namespace std;
 #define map                      map<ll,ll>
 #define mod                      1000000007
 
+/*
+^   Time Complexity: O(n^3)
+^       - Sorting takes O(n log n).
+^       - Two nested loops (i, j) each run O(n) times.
+^       - The two-pointer search (k, l) runs O(n) for each (i, j) pair.
+^       - Total: O(n^2 * n) = O(n^3)
+^
+^   Space Complexity: O(1) (excluding output)
+^       - No extra space used except for the answer vector.
+^       - If output is counted, space is O(k), where k is the number of quadruplets found.
+*/
 
 class Solution {
 public:
