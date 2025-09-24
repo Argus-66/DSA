@@ -19,3 +19,4 @@ Hence, GCD(sumOdd, sumEven) = GCD(16, 20) = 4
 3633. Earliest Finish Time for Land and Water Rides I
 cant seem to build logic
 
+checking
