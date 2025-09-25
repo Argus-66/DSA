@@ -32,6 +32,14 @@ using namespace std;
 ^       First k elements in nums are the result
 ^       Elements beyond k don’t matter
 
+*   Side note:
+~       Don’t actually need to delete the extra elements.
+~       They just want:
+~           - The new length (k)
+~           - The first k elements of nums without val
+~           - What comes after k doesn’t matter 
+~             (can be garbage, old values, duplicates, etc.)
+
 *   Return k
 */
 
