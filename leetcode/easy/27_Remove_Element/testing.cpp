@@ -15,6 +15,27 @@ using namespace std;
 #define map                      map<ll,ll>
 #define mod                      1000000007
 
+/*
+*   Use two pointers:
+^       i -> scans every element
+^       k -> position to write next valid (non-val) element
+
+*   For each element nums[i]:
+^       If nums[i] != val:
+^           nums[k] = nums[i]   // overwrite
+^           k++                 // move write pointer
+^       Else:
+^           skip it
+
+*   After loop:
+^       k = count of non-val elements (new length)
+^       First k elements in nums are the result
+^       Elements beyond k don’t matter
+
+*   Return k
+*/
+
+
 class Solution {
 public:
     int removeElement(vector<int>& nums, int val) {
